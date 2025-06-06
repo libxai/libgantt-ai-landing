@@ -1,0 +1,22 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Fondo degradado -->
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Diamante blanco -->
+  <path d="M 200 60 L 300 200 L 200 340 L 100 200 Z" 
+        fill="#ffffff" 
+        stroke="#ffffff" 
+        stroke-width="2"/>
+  <!-- Texto LX -->
+  <text x="200" y="215" 
+        font-family="Arial, sans-serif" 
+        font-size="90" 
+        font-weight="bold" 
+        fill="#06b6d4" 
+        text-anchor="middle">LX</text>
+</svg>
