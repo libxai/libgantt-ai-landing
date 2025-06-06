@@ -165,7 +165,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Need help or have questions?
 
-- 📧 Email: support@libgantt-ai.com
+- 📧 Email: hello@libxai.com
 - 💬 Discord: [Join our community](https://discord.gg/libgantt-ai)
 - 📚 Docs: [LibGantt-AI Documentation](https://docs.libgantt-ai.com)
 - 🐛 Issues: [GitHub Issues](https://github.com/libxai/ganttAI/issues)
