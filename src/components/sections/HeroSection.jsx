@@ -7,6 +7,37 @@ const HeroSection = () => {
   const [heroRef, isHeroVisible] = useIntersectionObserver();
   const { t } = useTranslation();
 
+  // Función para hacer scroll suave a la sección de pricing
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById("pricing");
+    if (pricingSection) {
+      pricingSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  // Función para dirigir al repositorio de GitHub
+  const goToGitHub = () => {
+    window.open(
+      "https://github.com/libxai/ganttAI",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  // Función para hacer scroll a la sección de AI Features
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById("features");
+    if (featuresSection) {
+      featuresSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section
       ref={heroRef}
@@ -62,16 +93,18 @@ const HeroSection = () => {
               {t("hero.description")}
             </p>
 
-            {/* Pricing badge */}
-            <div
-              className={`inline-flex items-center px-6 py-3 rounded-full bg-orange-500 text-white font-semibold text-lg mb-10 shadow-xl transition-all duration-1000 ease-out delay-600 ${
+            {/* Pricing badge - AHORA CON FUNCIONALIDAD */}
+            <button
+              onClick={scrollToPricing}
+              className={`inline-flex items-center px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg mb-10 shadow-xl transition-all duration-300 ease-out cursor-pointer transform hover:scale-105 hover:-translate-y-1 ${
                 isHeroVisible
                   ? "opacity-100 translate-y-0 scale-100"
                   : "opacity-0 translate-y-8 scale-95"
               }`}
+              style={{ transitionDelay: "600ms" }}
             >
               {t("hero.pricingBadge")}
-            </div>
+            </button>
 
             {/* CTA Buttons */}
             <div
@@ -81,11 +114,17 @@ const HeroSection = () => {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              <button className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1">
+              <button
+                onClick={goToGitHub}
+                className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1"
+              >
                 <span className="mr-3 text-xl">🚀</span>
                 {t("hero.getStarted")}
               </button>
-              <button className="flex items-center justify-center border-2 border-white/40 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300 shadow-xl hover:-translate-y-1">
+              <button
+                onClick={scrollToFeatures}
+                className="flex items-center justify-center border-2 border-white/40 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300 shadow-xl hover:-translate-y-1"
+              >
                 <span className="mr-3 text-xl">🤖</span>
                 {t("hero.seeFeatures")}
               </button>

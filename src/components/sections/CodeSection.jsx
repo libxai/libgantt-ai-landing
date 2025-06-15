@@ -1,8 +1,17 @@
-import React from "react";
+// import React from "react";
 import { useTranslation } from "../../data/translations";
 
 const CodeSection = () => {
   const { t } = useTranslation();
+
+  // Función para ir al repositorio de GitHub
+  const goToGitHub = () => {
+    window.open(
+      "https://github.com/libxai/ganttAI",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
   const codeExample = `// Install LibGantt-AI
 npm install libgantt-ai
@@ -44,10 +53,16 @@ gantt.ai.createProject({
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 shadow-xl">
+              <button
+                onClick={goToGitHub}
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 shadow-xl transform hover:scale-105 hover:-translate-y-1"
+              >
                 📖 {t("code.viewDocs")}
               </button>
-              <button className="bg-slate-700 hover:bg-slate-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 border border-slate-600">
+              <button
+                onClick={goToGitHub}
+                className="bg-slate-700 hover:bg-slate-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 border border-slate-600 transform hover:scale-105 hover:-translate-y-1"
+              >
                 ⭐ {t("code.starGithub")}
               </button>
             </div>
