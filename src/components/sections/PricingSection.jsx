@@ -5,6 +5,15 @@ import { useTranslation } from "../../data/translations";
 const PricingCard = ({ plan, isHighlighted, index }) => {
   const { t } = useTranslation();
 
+  // Función para ir al repositorio de GitHub
+  const goToGitHub = () => {
+    window.open(
+      "https://github.com/libxai/ganttAI",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <div
       className={`relative rounded-2xl p-8 transition-all duration-500 hover:transform hover:scale-105 hover:-translate-y-2 ${
@@ -64,6 +73,7 @@ const PricingCard = ({ plan, isHighlighted, index }) => {
       </ul>
 
       <button
+        onClick={goToGitHub}
         className={`w-full py-4 px-6 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 ${
           isHighlighted
             ? "bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-orange-500/50"
